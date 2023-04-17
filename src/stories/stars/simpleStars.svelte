@@ -1,9 +1,12 @@
+<script>
+  export let maxStars = 5
+  let starList = Array.from({length: maxStars}).map((_, i) => i + 1)
+</script>
+
 <div class="stars">
-  <input type="radio" name="rating" value="1" />
-  <input type="radio" name="rating" value="2" />
-  <input type="radio" name="rating" value="3" />
-  <input type="radio" name="rating" value="4" />
-  <input type="radio" name="rating" value="5" />
+  {#each starList as star}
+    <input type="radio" name="rating" value={star} />
+  {/each}
   <i></i>
 </div>
 

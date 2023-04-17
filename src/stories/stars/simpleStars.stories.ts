@@ -8,7 +8,7 @@ const meta = {
   component: simpleStars,
   tags: ['autodocs'],
   argTypes: {
- 
+    maxStars: {control: {type: 'number'}}
   },
 } satisfies Meta<simpleStars>;
 
@@ -18,5 +18,16 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/svelte/writing-stories/args
 export const Primary: Story = {
   args: {
+    maxStars: 5
+  },
+};
+export const Secondary: Story = {
+  args: {
+    maxStars: 3
+  },
+};
+export const Tertiary: Story = {
+  args: {
+    maxStars: 7
   },
 };
