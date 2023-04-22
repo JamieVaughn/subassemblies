@@ -4,7 +4,7 @@ import singleInputStars from './singleInputStars.svelte';
 
 // More on how to set up stories at: https://storybook.js.org/docs/svelte/writing-stories/introduction
 const meta = {
-  title: 'singleInputStars',
+  title: 'stars/singleInputStars',
   component: singleInputStars,
   tags: ['autodocs'],
   argTypes: {

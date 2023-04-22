@@ -1,4 +1,25 @@
-.storybook-button {
+<script lang="ts">
+  export let primary = false;
+  export let backgroundColor: string | undefined = undefined;
+  export let size: 'small' | 'medium' | 'large' = 'medium';
+  export let label: string = '';
+
+  $: mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+
+  $: style = backgroundColor ? `background-color: ${backgroundColor}` : '';
+</script>
+
+<button
+  type="button"
+  class={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+  {style}
+  on:click
+>
+  {label}
+</button>
+
+<style>
+  .storybook-button {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
@@ -28,3 +49,4 @@
   font-size: 16px;
   padding: 12px 24px;
 }
+</style>
