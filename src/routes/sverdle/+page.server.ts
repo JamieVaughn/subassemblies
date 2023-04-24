@@ -1,6 +1,7 @@
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 import { Game } from './game';
 import type { PageServerLoad, Actions } from './$types';
+
 
 export const load = (({ cookies }) => {
 	const game = new Game(cookies.get('sverdle'));
@@ -65,5 +66,6 @@ export const actions = {
 
 	restart: async ({ cookies }) => {
 		cookies.delete('sverdle');
+		// throw redirect(303, "/about") // absolutely don't need this just showing a pattern
 	}
 } satisfies Actions;
