@@ -1,18 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
-import indefiniteLoadingBar from './indefiniteLoadingBar.svelte';
+import pieTimer from './pieTimer.svelte';
 
 // More on how to set up stories at: https://storybook.js.org/docs/svelte/writing-stories/introduction
 const meta = {
-  title: 'indefiniteLoadingBar',
-  component: indefiniteLoadingBar,
+  title: 'loaders/pieTimer',
+  component: pieTimer,
   tags: ['autodocs'],
   argTypes: {
-    color1: { control: 'color' },
-    color2: { control: 'color' },
-    width: { control: { type: 'number' } },
+    color: { control: { type:'color' } },
+    debug: { control: { type: 'boolean' } },
   },
-} satisfies Meta<indefiniteLoadingBar>;
+} satisfies Meta<pieTimer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
