@@ -24,9 +24,23 @@ export const Primary: Story = {
   },
 };
 
+export const QuarterStep: Story = {
+  args: {
+    maxRating: 5,
+    step: 0.25
+  },
+};
+
 export const Hearts: Story = {
   args: {
     maxRating: 5,
     icon: 'heart'
+  },
+};
+
+export const Readonly: Story = {
+  args: {
+    maxRating: 5,
+    readonly: 3.5,
   },
 };

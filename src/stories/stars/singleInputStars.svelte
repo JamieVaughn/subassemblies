@@ -1,22 +1,35 @@
 <script lang='ts'>
   export let maxRating = 5
+  export let step = 0.5
   export let icon: 'star' | 'heart' = 'star'
   export let dir: 'ltr' | 'rtl' = 'ltr'
-  let rating = 1
+  export let readonly: number | undefined = undefined
+  let rating = readonly ? readonly : 1
+  const handleInput = (e: Event) => {
+    if(readonly) return
+    e?.target?.style.setProperty('--value', rating)
+  }
+  let style = `
+  --value: ${readonly ?? rating}; 
+  --stars: ${maxRating}; 
+  --symbol: var(--${icon});
+  --fill: ${icon === 'heart' ? 'crimson' : 'gold'};
+  `
 </script>
 
 <label 
-{dir}
-class="rating-label">
+  {dir}
+  class="rating-label"
+>
   <strong>Rating</strong>
   <input
     class="rating"
     type="range"
-    step="0.5"
-    style={`--stars: ${maxRating}; --symbol: var(--${icon}); --fill: ${icon === 'heart' ? 'crimson' : 'gold'};`}
+    step={step}
+    {style}
     max={maxRating + 0.5}
     min="-0.5"
-    on:input={e => e?.target?.style.setProperty('--value', rating)}
+    on:input={handleInput}
     bind:value={rating}
     >
 </label>

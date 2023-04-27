@@ -24,7 +24,6 @@
   opacity:0;
   cursor:pointer;
   clip-path: polygon(49% 0,calc(50% + 0.2245*50%) calc(0.691*50%),50% 50%,calc(50% - 0.2245*50%) calc(0.691*50%));
-  
 }
 .stars input:nth-of-type(2) {transform:rotate(72deg)}
 .stars input:nth-of-type(3) {transform:rotate(144deg)}
@@ -40,8 +39,6 @@
     conic-gradient(from -36deg,gold                       calc(var(--p,0)*72deg),#0000 0),
     #ccc;
 }
-
-
 
 .stars:focus-within {
   filter:drop-shadow(0 0 2px #000);
