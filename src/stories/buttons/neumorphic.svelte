@@ -1,10 +1,10 @@
 <script lang='ts'>
-
+  export let text = 'Submit'
 </script>
 
 <div class="container">
   <button>
-      Submit
+      {text}
   </button>
 </div>
 
@@ -17,30 +17,29 @@
   justify-content: space-around;
   background: #f2f2f2;
 }
-button {
-  border: 0;
-  box-shadow: 0px -6px 10px white, 0px 4px 15px rgba(0, 0, 0, 0.15);
-}
+
 button:focus {
   border: none;
-  outline: 0 !important;
+  outline: none;
   outline-style: none;
 }
-button, button:active {
+button {
   position: relative;
   padding: 1rem 2rem;
   border-radius: 5rem;
   font-size: 1.5rem;
-  font-family: "Roboto", sans-serif;
   color: #626262;
   background: #f2f2f2;
   transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
 }
+button {
+  border: 0;
+  box-shadow: 0px -6px 10px white, 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
 button:active {
   translate: 0 0.5px;
   transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0px -6px 10px rgba(255, 255, 255, 0.02), 0 15px 20px rgba(0, 0, 0, 0.02);
+  box-shadow: inset 0px -2px 5px white, inset 0px 2px 5px rgba(0, 0, 0, 0.15);
 }
-
 </style>

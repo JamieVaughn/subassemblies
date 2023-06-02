@@ -7,6 +7,7 @@ const meta = {
   component: neumorphic,
   tags: ['autodocs'],
   argTypes: {
+    text: { control: 'text' },
   },
 } satisfies Meta<neumorphic>;
 
@@ -15,5 +16,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
+    text: 'Submit'
   },
 };
